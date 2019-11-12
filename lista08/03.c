@@ -13,6 +13,7 @@ int main()
   printf("Insira o número de livros:\n");
   scanf("%d", &N);
   livros livro[N];
+  // Se feito cm ponteiro:
   //livros livroteste, *ptr;
   // ptr = &livroteste;
   //livroteste.ano = 1999;
@@ -34,7 +35,7 @@ int main()
   scanf("%s", LIVRODESEJADO);
   for (i = 0; i < N; i++)
   {
-    if (LIVRODESEJADO == livro[i].titulo)
+    if (strcmp(LIVRODESEJADO, livro[i].titulo) == 0)
     {
       printf("Título:%s\n", livro[i].titulo);
       printf("Autor:%s\n", livro[i].autor);
