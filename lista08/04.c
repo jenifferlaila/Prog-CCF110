@@ -3,7 +3,7 @@
 #include <string.h>
 # define tam 5
 typedef struct produtos{
-  int codigo, quantidade, estoque = 0;
+  int codigo, quantidade, estoque = 0, flag = 0;
   float preco;
   char nome[15];
 }produto;
@@ -30,16 +30,19 @@ int main()
 			{
 				produto[i].quantidade = produto[i].quantidade - quantidadep;
 				printf("A quantidade do produto %d é de :%d", produtop, produto[i].quantidade);
+				flag = 1;
 			}
 			else if ((quantidadep > produto[i].quantidade) && (produtop == produto[i].codigo))
 			{
 				printf("Quantidade excede o estoque\n");
+				flag = 1;
 			}
-			else if (produtop == produto[i].codigo)
-			{
-				printf("Produto indisponível")
-			}	
+			
     }
+	if (!flaf)
+	{
+		printf("Produto indisponivel");
+	}	  
   } 
 	return 0;
 }
